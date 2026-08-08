@@ -1,0 +1,14 @@
+cat <<EOF > ./config.json
+{
+"log": { "level": "info" },
+"inbounds": [{
+"type": "vless",
+"tag": "vless-in",
+"listen": "::",
+"listen_port": 8080,
+"users": [{ "uuid": "4ee06e75-1122-4cbd-896a-c88e7751cbbb" }],
+"transport": { "type": "ws", "path": "/vless" }
+}],
+"outbounds": [{ "type": "direct", "tag": "direct" }]
+}
+EOF
